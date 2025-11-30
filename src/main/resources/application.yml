@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: rpd-project
+app:
+  upload-service:
+    file-path: "file_storage"
