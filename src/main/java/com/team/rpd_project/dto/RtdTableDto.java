@@ -3,12 +3,14 @@ package com.team.rpd_project.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class RtdTableDto {
     //Под "Семестры (часы)
     private BigDecimal semester;
@@ -34,7 +36,7 @@ public class RtdTableDto {
     private BigDecimal intermediateAssessmentHours;
 
     // Самостоятельная работа, в том числе:
-    private BigDecimal IndependentWork;
+    private BigDecimal independentWork;
 
     // Курсовая работа
     private BigDecimal courseWorkHours;
@@ -52,8 +54,8 @@ public class RtdTableDto {
     private BigDecimal currentAssessmentPreparationHours;
 
     //Контроль
-    private String control;
-
+    private String formIntermediateCertificationFirst;
+    private String formIntermediateCertificationSecond;
     //Подготовка к экзамену
     private BigDecimal examPreparationHours;
 
