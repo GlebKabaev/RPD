@@ -70,8 +70,8 @@ public class WordTableService {
         replacements.put("${totalWorkloadHours}", format(dto.getTotalWorkloadHours()));
         replacements.put("${totalContactWorkHours}", format(dto.getTotalContactWorkHours()));
         replacements.put("${totalWorkloadCredits}", format(dto.getTotalWorkloadCredits()));
-        replacements.put("${formIntermediateCertificationFirst}", dto.getFormIntermediateCertificationFirst() != null ? dto.getFormIntermediateCertificationFirst() : "-");
-        replacements.put("${formIntermediateCertificationSecond}", dto.getFormIntermediateCertificationSecond() != null ? dto.getFormIntermediateCertificationSecond() : "-");
+        replacements.put("${formIntermediateCertificationFirst}", dto.getFormIntermediateCertificationFirst() != null ? dto.getFormIntermediateCertificationFirst() : "–");
+        replacements.put("${formIntermediateCertificationSecond}", dto.getFormIntermediateCertificationSecond() != null ? dto.getFormIntermediateCertificationSecond() : "–");
         return replacements;
     }
 
@@ -137,7 +137,7 @@ public class WordTableService {
      */
     private String format(BigDecimal value) {
         if (value == null) {
-            return "-";
+            return "–";
         }
         return value.stripTrailingZeros().toPlainString();
     }
