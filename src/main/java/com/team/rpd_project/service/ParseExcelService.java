@@ -1,6 +1,7 @@
 package com.team.rpd_project.service;
 
 import com.team.rpd_project.dto.RtdTableDto;
+import lombok.Getter;
 import org.apache.poi.ss.usermodel.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 @Service
-public class ParseExcel {
+public class ParseExcelService {
     private static final String[] SEMESTER_COLUMNS = {"Экза мен", "Зачет", "Зачет с оц.", "КП", "КР"};
     private static final String[] EXPECTED_SEMESTER_COLUMNS = {"з.е.", "Лек", "Лаб", "Пр", "КСР", "КРП", "ИКР", "СР", "Конт роль"};
     private static final int HEADER_ROW_INDEX = 2;
@@ -148,6 +149,7 @@ public class ParseExcel {
                 try {
                     return Integer.parseInt(cellValue.trim());
                 } catch (NumberFormatException e) {
+
                 }
             }
         }
@@ -224,6 +226,7 @@ public class ParseExcel {
             return null;
         }
     }
+    @Getter
     private static class SemesterColumnRange {
         private final int startColumn;
         private final int endColumn;
@@ -234,9 +237,6 @@ public class ParseExcel {
             this.endColumn = endColumn;
             this.columnMapping = columnMapping;
         }
-        public int getStartColumn() { return startColumn; }
-        public int getEndColumn() { return endColumn; }
-        public Map<String, Integer> getColumnMapping() { return columnMapping; }
     }
     private String getCellValueAsString(Row row, int columnIndex) {
         if (row == null || columnIndex < 0) return null;
