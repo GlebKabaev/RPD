@@ -54,8 +54,8 @@ public class RtdTableDto {
     private BigDecimal currentAssessmentPreparationHours;
 
     //Контроль
-    private String control;
-
+    private String formIntermediateCertificationFirst;
+    private String formIntermediateCertificationSecond;
     //Подготовка к экзамену
     private BigDecimal examPreparationHours;
 
